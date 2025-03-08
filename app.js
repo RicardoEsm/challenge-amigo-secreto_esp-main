@@ -4,6 +4,7 @@
 let listaNombres=[];
 
 function agregarAmigo(){
+    document.getElementById("resultado").innerHTML = "";
     let nombre=document.getElementById("amigo").value.trim();
     console.log(nombre);
     if(!validarLista(nombre)){
@@ -48,3 +49,10 @@ function sortearAmigo(){
 }
 document.getElementById("botonSorteo").addEventListener("click",sortearAmigo);
 
+
+function resetearJuego(){
+    listaNombres.length=0; // resetea el array;
+    document.getElementById("listaAmigos").innerText =listaNombres;
+    document.getElementById("resultado").innerHTML = `Juego Reiniciado, buena suerte!`;
+}
+document.getElementById("botonReinicio").addEventListener("click",resetearJuego);
